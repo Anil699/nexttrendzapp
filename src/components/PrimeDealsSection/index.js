@@ -1,6 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
-import { Audio } from 'react-loader-spinner'
+import Loader from 'react-loader-spinner'
 
 import ProductCard from '../ProductCard'
 import './index.css'
@@ -35,6 +35,7 @@ class PrimeDealsSection extends Component {
         Authorization: `Bearer ${jwtToken}`,
       },
       method: 'GET',
+      
     }
     const response = await fetch(apiUrl, options)
     if (response.ok === true) {
@@ -83,7 +84,7 @@ class PrimeDealsSection extends Component {
 
   renderLoadingView = () => (
     <div className="primedeals-loader-container">
-      <Audio type="Three dots" color="#0b69ff" height="50" width="50" />
+      <Loader type="Puff" color="#0b69ff" height="50" width="50" />
     </div>
   )
 
